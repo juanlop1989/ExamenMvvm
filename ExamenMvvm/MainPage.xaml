@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenMvvm.MainPage"
+             xmlns:viewmodel="clr-namespace:Examen_Mvvm.ViewModels"
+             x:DataType="viewmodel:QuadraticFormulaViewModel">
+
+    <VerticalStackLayout>
+        <Label Text="Resolver Fórmula Cuadrática" FontSize="Title" Margin="20" />
+
+        <Grid RowSpacing="10" ColumnSpacing="10" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Valor de a:" Grid.Row="0" Grid.Column="0" />
+            <Entry Keyboard="Numeric" Text="{Binding A}" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Valor de b:" Grid.Row="1" Grid.Column="0" />
+            <Entry Keyboard="Numeric" Text="{Binding B}" Grid.Row="1" Grid.Column="1" />
+
+            <Label Text="Valor de c:" Grid.Row="2" Grid.Column="0" />
+            <Entry Keyboard="Numeric" Text="{Binding C}" Grid.Row="2" Grid.Column="1" />
+
+            <Label Text="Resultado X1:" Grid.Row="3" Grid.Column="0" />
+            <Label Text="{Binding X1}" Grid.Row="3" Grid.Column="1" />
+
+            <Label Text="Resultado X2:" Grid.Row="4" Grid.Column="0" />
+            <Label Text="{Binding X2}" Grid.Row="4" Grid.Column="1" />
+
+
+        </Grid>
+
+        <HorizontalStackLayout Margin="20">
+            <Button Text="Calcular" Command="{Binding CalculateCommand}" />
+            <Button Text="Limpiar" Command="{Binding ClearCommand}" Background="Red" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>
